@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráficos de Prueba</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/antd/4.18.5/antd.min.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: auto;
+            background-image: url('https://raw.githubusercontent.com/nestrellam20/microrrizasndmm/main/images.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #333;
+            padding: 20px; /* Add padding to the body */
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9); /* Slightly more opaque for readability */
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            max-width: 800px; /* Increase max width for larger content */
+            width: 100%;
+            margin: 20px; /* Add margin for spacing */
+        }
+        h1, h2 {
+            margin-bottom: 20px; /* Add space below headers */
+        }
+        img {
+            width: 100%; /* Make images responsive */
+            height: auto;
+            margin: 20px 0; /* Add margin for spacing */
+        }
+        table {
+            margin: 20px 0; /* Add margin for spacing */
+            width: 100%; /* Make table responsive */
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gráficos de Prueba del Modelo</h1>
+        <p>Aquí puedes mostrar los gráficos generados a partir de las pruebas del modelo.</p>
+
+        <!-- Gráficos -->
+        <h2>Resultados de Precisión</h2>
+        <img src="https://github.com/nestrellam20/microrrizasndmm/blob/main/descarga%20(1).png" alt="Gráfico de Precisión">
+        <h2>Pérdida del Modelo</h2>
+        <img src="https://github.com/nestrellam20/microrrizasndmm/blob/main/descarga%20(2).png" alt="Gráfico de Pérdida">
+        <h2>Matriz de Confusión</h2>
+        <img src="https://github.com/nestrellam20/microrrizasndmm/blob/main/descarga.png" alt="Matriz de Confusión">
+
+        <!-- Correlation Matrix Table -->
+        <h2>Matriz de Correlación</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Variable</th>
+                    <th>Ectomicorrizas</th>
+                    <th>Endomicorrizas</th>
+                    <th>Ericoide</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Ectomicorrizas</td>
+                    <td>1.0</td>
+                    <td>0.8</td>
+                    <td>0.5</td>
+                </tr>
+                <tr>
+                    <td>Endomicorrizas</td>
+                    <td>0.8</td>
+                    <td>1.0</td>
+                    <td>0.3</td>
+                </tr>
+                <tr>
+                    <td>Ericoide</td>
+                    <td>0.5</td>
+                    <td>0.3</td>
+                    <td>1.0</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Resultados de Accuracy</h2>
+        <p id="accuracyResult"></p>
+        
+        <button onclick="window.location.href='/'" class="ant-btn ant-btn-primary">Volver al Inicio</button>
+    </div>
+
+    <script>
+        // Display accuracy results (replace with your actual accuracy values)
+        const accuracy = 0.9781; // Example accuracy
+        document.getElementById('accuracyResult').innerText = `Accuracy del modelo: ${(accuracy * 100).toFixed(2)}%`;
+    </script>
+
+</body>
+</html>

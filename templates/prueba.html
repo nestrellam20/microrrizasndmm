@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detector de Microrrisas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/antd/4.18.5/antd.min.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: url('https://ecomaria.com/blog/wp-content/uploads/2019/05/micorrizas1.jpg');
+            background-size: cover;
+            background-position: center; 
+            background-repeat: no-repeat;
+        }
+        .upload-container {
+            background: rgba(255, 255, 255, 0.9); 
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        #fileInput {
+            display: none; 
+        }
+        #preview {
+            max-width: 100%;
+            max-height: 300px; 
+            margin: 20px 0; 
+            display: none; 
+        }
+    </style>
+</head>
+<body>
+    <div class="upload-container">
+        <h1 style="text-align: center;">Sube una Imagen</h1>
+        <form action="/" method="POST" enctype="multipart/form-data">
+            <div style="margin-bottom: 20px; text-align: center;">
+                <input type="file" name="image" accept="image/*" id="fileInput">
+                <button type="button" class="ant-btn ant-btn-primary" id="selectImageBtn" style="width: 100%;">
+                    <i class="fa fa-file-image-o"></i>
+                    Seleccionar Imagen
+                </button>
+            </div>
+            <br/>
+            <img id="preview" src="" alt="Vista previa de la imagen" style="display:none;">
+            <br/>
+            <button type="submit" class="ant-btn ant-btn-success" style="width: 100%;">
+                <i class="fa fa-send"></i>
+                Clic aquí para identificar la microrriza
+            </button>
+            <br/>
+            <button type="button" class="ant-btn ant-btn-default" onclick="window.location.href='/'" style="width: 100%;">
+                <i class="fa fa-home"></i>
+                Volver al Inicio
+            </button>
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/antd/4.18.5/antd.min.js"></script>
+    <script>
+        // Agregar un evento al botón de seleccionar imagen
+        document.getElementById('selectImageBtn').addEventListener('click', function() {
+            document.getElementById('fileInput').click(); // Simula el clic en el input de tipo file
+        });
+
+        // Agregar un evento para mostrar la vista previa de la imagen seleccionada
+        document.getElementById('fileInput').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                const imgPreview = document.getElementById('preview');
+                imgPreview.src = e.target.result; 
+                imgPreview.style.display = 'block'; 
+            };
+
+            if (file) {
+                reader.readAsDataURL(file); 
+            }
+        });
+    </script>
+
+</body>
+</html>

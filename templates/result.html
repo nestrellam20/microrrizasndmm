@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado</title>
+    <!-- Importar CSS de Ant Design -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/antd/4.18.5/antd.min.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: url('https://img.freepik.com/vector-gratis/fondo-escritorio-moderno-vector-diseno-azul-geometrico_53876-135923.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1725926400&semt=ais_hybrid'); /* Imagen de fondo */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #333; /* Color del texto */
+        }
+        .result-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        .ant-btn {
+            margin-top: 20px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h1>Resultado de la Predicción</h1>
+        <p style="font-size: 18px; font-weight: bold;">Clase Predicha: <span style="color: #4CAF50;">{{ label }}</span></p>
+        <p style="font-size: 18px; font-weight: bold;">Probabilidad: <span style="color: #4CAF50;">{{ probability }}%</span></p>
+        <a href="/prueba" class="ant-btn ant-btn-primary">Subir otra imagen</a>
+        <button type="button" class="ant-btn ant-btn-default" onclick="window.location.href='/'" style="width: 100%;">
+            <i class="fa fa-home"></i>
+            Volver al Inicio
+        </button>
+    </div>
+
+    <!-- Importar JavaScript de Ant Design -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/antd/4.18.5/antd.min.js"></script>
+</body>
+</html>
