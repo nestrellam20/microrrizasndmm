@@ -3,7 +3,6 @@ import tensorflow as tf
 from tensorflow.keras.preprocessing import image
 import numpy as np
 import os
-
 app = Flask(__name__)
 
 # Cargar el modelo previamente entrenado
